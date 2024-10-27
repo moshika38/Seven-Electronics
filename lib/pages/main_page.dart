@@ -1,9 +1,12 @@
 import 'dart:async';
 import 'package:coustom_flutter_widgets/input_feild.dart';
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
+import 'package:e_commers_app/utils/colors.dart';
+import 'package:e_commers_app/utils/style.dart';
 import 'package:e_commers_app/widgets/cate_card.dart';
 import 'package:e_commers_app/widgets/hedline.dart';
 import 'package:e_commers_app/widgets/cyber_monday_card.dart';
+import 'package:e_commers_app/widgets/subscribe.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -174,6 +177,9 @@ class _MainPageState extends State<MainPage> {
                   },
                 ),
               ),
+
+              20.ph,
+              Subscribe(),
             ], // page end
           ),
         ),
