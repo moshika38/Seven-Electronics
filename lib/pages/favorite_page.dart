@@ -1,8 +1,6 @@
-import 'package:coustom_flutter_widgets/page_animation.dart';
-import 'package:e_commers_app/pages/home_page.dart';
-import 'package:e_commers_app/utils/colors.dart';
 import 'package:e_commers_app/utils/style.dart';
 import 'package:e_commers_app/widgets/appbar_back_btn.dart';
+import 'package:e_commers_app/widgets/cyber_monday_card.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -24,10 +22,31 @@ class _FavoritePageState extends State<FavoritePage> {
           style: AppStyle().subTitle,
         ),
       ),
-      body: Column(
-        children: [
-          // favorite page
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            // favorite page
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const ScrollPhysics(),
+              itemCount: 5,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                // crossAxisSpacing: 10,
+                mainAxisSpacing: 5,
+                childAspectRatio: 16 / 16,
+              ),
+              itemBuilder: (context, index) {
+                return const CyberMondayCard(
+                  image: "assets/src/cooker.png",
+                  title: "Rice Cooker",
+                  rate: 4,
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

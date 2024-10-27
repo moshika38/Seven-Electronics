@@ -11,8 +11,8 @@ class AppbarBackBtn extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10, top: 0),
       child: Container(
-        width: 50,
-        height: 50,
+        width: 30,
+        height: 30,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: AppColors().ashColor,
