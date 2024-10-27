@@ -19,7 +19,7 @@ class _CoustomRatingsBarState extends State<CoustomRatingsBar> {
         return Icon(
           index < widget.rateIng ? Icons.star : Icons.star_border,
           size: widget.size ?? 18,
-          color: widget.colors ?? Color.fromARGB(255, 199, 181, 22),
+          color: widget.colors ?? const Color.fromARGB(255, 199, 181, 22),
         );
       }),
     );

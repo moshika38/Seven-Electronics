@@ -25,6 +25,14 @@ class _MainPageState extends State<MainPage> {
     ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.asset(
+        "assets/src/im1.jpg",
+        width: double.infinity,
+        fit: BoxFit.fitWidth,
+      ),
+    ),
+    ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.asset(
         "assets/src/img1.jpg",
         width: double.infinity,
         fit: BoxFit.fitWidth,
@@ -33,15 +41,7 @@ class _MainPageState extends State<MainPage> {
     ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.asset(
-        "assets/src/img2.jpg",
-        width: double.infinity,
-        fit: BoxFit.fitWidth,
-      ),
-    ),
-    ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Image.asset(
-        "assets/src/img3.jpg",
+        "assets/src/im2.jpeg",
         width: double.infinity,
         fit: BoxFit.fitWidth,
       ),
@@ -101,7 +101,7 @@ class _MainPageState extends State<MainPage> {
               ),
               10.ph,
               const Headline(
-                mainTitle: "Categorys",
+                mainTitle: "Categories",
               ),
               10.ph,
               const Row(
@@ -152,7 +152,7 @@ class _MainPageState extends State<MainPage> {
               const Headline(
                 mainTitle: "New User Offers",
                 subTitle: "See all",
-              ),
+              ), 
 
               // 10.ph,
               SizedBox(
