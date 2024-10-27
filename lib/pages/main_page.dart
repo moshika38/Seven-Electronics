@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:coustom_flutter_widgets/input_feild.dart';
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
-import 'package:e_commers_app/utils/colors.dart';
-import 'package:e_commers_app/utils/style.dart';
 import 'package:e_commers_app/widgets/cate_card.dart';
 import 'package:e_commers_app/widgets/hedline.dart';
 import 'package:e_commers_app/widgets/cyber_monday_card.dart';
@@ -84,7 +82,7 @@ class _MainPageState extends State<MainPage> {
                 borderRadius: 100,
                 hintText: "Search...",
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 200,
                 child: PageView(
@@ -92,21 +90,21 @@ class _MainPageState extends State<MainPage> {
                   children: image,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               SmoothPageIndicator(
                 controller: pages,
                 count: image.length,
-                effect: WormEffect(
+                effect: const WormEffect(
                   dotHeight: 8,
                   dotWidth: 8,
                 ),
               ),
               10.ph,
-              Headline(
+              const Headline(
                 mainTitle: "Categorys",
               ),
-              15.ph,
-              Row(
+              10.ph,
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CateCard(
@@ -123,8 +121,8 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ],
               ),
-              25.ph,
-              Headline(
+              10.ph,
+              const Headline(
                 mainTitle: "Cyber Monday",
                 subTitle: "See all",
               ),
@@ -132,16 +130,16 @@ class _MainPageState extends State<MainPage> {
                 height: 200,
                 child: GridView.builder(
                   shrinkWrap: true,
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     mainAxisSpacing: 10,
                     childAspectRatio: 16 / 14,
                   ),
                   itemBuilder: (context, index) {
-                    return CyberMondayCard(
+                    return const CyberMondayCard(
                       image: "assets/src/cooker.png",
                       title: "Rice Cooker",
                       rate: 4,
@@ -151,25 +149,26 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               10.ph,
-              Headline(
+              const Headline(
                 mainTitle: "New User Offers",
                 subTitle: "See all",
               ),
+
               // 10.ph,
               SizedBox(
                 height: 200,
                 child: GridView.builder(
                   shrinkWrap: true,
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     mainAxisSpacing: 10,
                     childAspectRatio: 16 / 14,
                   ),
                   itemBuilder: (context, index) {
-                    return CyberMondayCard(
+                    return const CyberMondayCard(
                       image: "assets/src/cooker.png",
                       title: "Rice Cooker",
                       rate: 4,
@@ -178,8 +177,11 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
 
-              20.ph,
-              Subscribe(),
+              15.ph,
+              const Headline(
+                mainTitle: "Stay in the Loop",
+              ),
+              const Subscribe(),
             ], // page end
           ),
         ),
