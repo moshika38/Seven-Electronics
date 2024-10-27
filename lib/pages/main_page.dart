@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:coustom_flutter_widgets/input_feild.dart';
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
-import 'package:e_commers_app/utils/colors.dart';
-import 'package:e_commers_app/utils/style.dart';
+import 'package:e_commers_app/widgets/cate_card.dart';
+import 'package:e_commers_app/widgets/hedline.dart';
+import 'package:e_commers_app/widgets/cyber_monday_card.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -98,42 +99,82 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               10.ph,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "Categorys",
-                    style: AppStyle().subTitle,
-                  ),
-                ],
+              Headline(
+                mainTitle: "Categorys",
               ),
-              10.ph,
+              15.ph,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: AppColors().secWhite,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors().secBlack,
-                          offset: Offset(0.5, 0.5),
-                          blurRadius: 5,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        
-                      ],
-                    ),
+                  CateCard(
+                    image: "assets/src/mobile.png",
+                  ),
+                  CateCard(
+                    image: "assets/src/computer.png",
+                  ),
+                  CateCard(
+                    image: "assets/src/home.png",
+                  ),
+                  CateCard(
+                    image: "assets/src/school.png",
                   ),
                 ],
-              )
-            ],
+              ),
+              25.ph,
+              Headline(
+                mainTitle: "Cyber Monday",
+                subTitle: "See all",
+              ),
+              SizedBox(
+                height: 200,
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 16 / 14,
+                  ),
+                  itemBuilder: (context, index) {
+                    return CyberMondayCard(
+                      image: "assets/src/cooker.png",
+                      title: "Rice Cooker",
+                      rate: 4,
+                      discount: "30",
+                    );
+                  },
+                ),
+              ),
+              10.ph,
+              Headline(
+                mainTitle: "New User Offers",
+                subTitle: "See all",
+              ),
+              // 10.ph,
+              SizedBox(
+                height: 200,
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 16 / 14,
+                  ),
+                  itemBuilder: (context, index) {
+                    return CyberMondayCard(
+                      image: "assets/src/cooker.png",
+                      title: "Rice Cooker",
+                      rate: 4,
+                    );
+                  },
+                ),
+              ),
+            ], // page end
           ),
         ),
       ),
