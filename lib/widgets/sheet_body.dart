@@ -3,6 +3,7 @@ import 'package:e_commers_app/kWidgets/ratings_bar.dart';
 import 'package:e_commers_app/utils/colors.dart';
 import 'package:e_commers_app/utils/style.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SheetBody extends StatefulWidget {
   const SheetBody({
@@ -14,6 +15,12 @@ class SheetBody extends StatefulWidget {
 }
 
 class _SheetBodyState extends State<SheetBody> {
+  PageController pages = PageController();
+  List<Widget> image = [
+    ImageDecoration(imageURL: "assets/src/cooker.png"),
+    ImageDecoration(imageURL: "assets/src/blender.jpg"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,12 +50,22 @@ class _SheetBodyState extends State<SheetBody> {
                     ],
                   ),
                   20.ph,
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      "assets/src/cooker.png",
-                      width: double.infinity,
-                      height: 200,
+                  SizedBox(
+                    height: 200,
+                    child: PageView(
+                      controller: pages,
+                      children: image,
+                    ),
+                  ),
+                  10.ph,
+                  Center(
+                    child: SmoothPageIndicator(
+                      controller: pages,
+                      count: image.length,
+                      effect: const WormEffect(
+                        dotHeight: 8,
+                        dotWidth: 8,
+                      ),
                     ),
                   ),
                   30.ph,
@@ -73,7 +90,7 @@ class _SheetBodyState extends State<SheetBody> {
                     rateIng: 3,
                     size: 30,
                   ),
-                  // 5.ph,
+                  30.ph,
                   GridView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -191,6 +208,23 @@ class ReviewText extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ImageDecoration extends StatelessWidget {
+  final String imageURL;
+  const ImageDecoration({super.key, required this.imageURL});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.asset(
+        imageURL,
+        width: double.infinity,
+        fit: BoxFit.contain,
       ),
     );
   }
