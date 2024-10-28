@@ -12,7 +12,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  bool isClick = true;
+  bool isClick = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

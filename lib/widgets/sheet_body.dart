@@ -15,6 +15,7 @@ class SheetBody extends StatefulWidget {
 }
 
 class _SheetBodyState extends State<SheetBody> {
+  int isQty = 1;
   PageController pages = PageController();
   List<Widget> image = [
     ImageDecoration(imageURL: "assets/src/cooker.png"),
@@ -69,9 +70,38 @@ class _SheetBodyState extends State<SheetBody> {
                     ),
                   ),
                   30.ph,
-                  Text(
-                    "Rise Cooker",
-                    style: AppStyle().subTitle,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Rise Cooker",
+                        style: AppStyle().subTitle,
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (isQty != 1) {
+                                    isQty -= 1;
+                                  }
+                                });
+                              },
+                              icon: Icon(Icons.remove)),
+                          Text(
+                            isQty.toString(),
+                            style: AppStyle().subTitle,
+                          ),
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  isQty += 1;
+                                });
+                              },
+                              icon: Icon(Icons.add)),
+                        ],
+                      )
+                    ],
                   ),
                   15.ph,
                   Text(
