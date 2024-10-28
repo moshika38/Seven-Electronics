@@ -181,10 +181,20 @@ class _MainPageState extends State<MainPage> {
                     childAspectRatio: 16 / 14,
                   ),
                   itemBuilder: (context, index) {
-                    return const CyberMondayCard(
-                      image: "assets/src/cooker.png",
-                      title: "Rice Cooker",
-                      rate: 4,
+                    return GestureDetector(
+                      onTap: () {
+                        CustomBottomSheet(
+                          context: context,
+                          height: 100.cmph(context),
+                          bgColor: AppColors().mainWhite,
+                          child: SheetBody(),
+                        ).showSheet();
+                      },
+                      child: const CyberMondayCard(
+                        image: "assets/src/cooker.png",
+                        title: "Rice Cooker",
+                        rate: 4,
+                      ),
                     );
                   },
                 ),
