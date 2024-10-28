@@ -111,26 +111,52 @@ class _SheetBodyState extends State<SheetBody> {
               ),
             ),
           ),
-          Container(
-            width: 80.cmpw(context),
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: AppColors().mainBlue,
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors().mainBlack,
-                  blurRadius: 10,
-                  offset: Offset(5, 5),
+          Row(
+            children: [
+              Container(
+                width: 70.cmpw(context),
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: AppColors().mainBlue,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors().mainBlack,
+                      blurRadius: 10,
+                      offset: Offset(5, 5),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                "Place Order 30\$",
-                style: AppStyle().normalTextLight,
+                child: Center(
+                  child: Text(
+                    "Place Order 30\$",
+                    style: AppStyle().normalTextLight,
+                  ),
+                ),
               ),
-            ),
+              10.pw,
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: AppColors().mainBlue,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors().mainBlack,
+                      blurRadius: 10,
+                      offset: Offset(5, 5),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Icon(
+                    Icons.shopping_cart,
+                    color: AppColors().mainWhite,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
