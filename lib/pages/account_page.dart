@@ -1,5 +1,5 @@
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
-import 'package:e_commers_app/utils/colors.dart';
+import 'package:e_commers_app/pages/cart_page.dart';
 import 'package:e_commers_app/utils/style.dart';
 import 'package:e_commers_app/widgets/appbar_back_btn.dart';
 import 'package:e_commers_app/widgets/details_card.dart';
@@ -42,6 +42,22 @@ class _AccountPageState extends State<AccountPage> {
               mainText: "Address",
               secText: "no 07, wijaya lane, mailagasthanna, badulla, sri lanka",
             ),
+            SizedBox(
+              width: 90.cmpw(context),
+              height: 100,
+              child: Card(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    20.pw,
+                    Text(
+                      "Log Out",
+                      style: AppStyle().normalText,
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
