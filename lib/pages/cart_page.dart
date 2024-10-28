@@ -1,6 +1,5 @@
-import 'package:coustom_flutter_widgets/size_extensiton.dart';
-import 'package:e_commers_app/utils/colors.dart';
 import 'package:e_commers_app/utils/style.dart';
+import 'package:e_commers_app/widgets/animated_container.dart';
 import 'package:e_commers_app/widgets/appbar_back_btn.dart';
 import 'package:e_commers_app/widgets/cart_body.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +12,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  bool isClick = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,59 +28,29 @@ class _CartPageState extends State<CartPage> {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-            // favorite page
-
-            SizedBox(
-              width: double.infinity,
-              height: 30.cmph(context),
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(40),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const textBar(
-                        text: "Total Item :",
-                        value: "10",
-                      ),
-                      const textBar(
-                        text: "Total Price :",
-                        value: "100 USd",
-                      ),
-                      const textBar(
-                        text: "Discount :",
-                        value: "10 %",
-                      ),
-                      const textBar(
-                        text: "Delivery Charge :",
-                        value: "10 USD",
-                      ),
-                      const textBar(
-                        text: "Sub Total :",
-                        value: "100 USD",
-                      ),
-                      10.ph,
-                      Container(
-                        width: 110,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: AppColors().secBlue,
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Check Out",
-                            style: AppStyle().normalTextLight,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              height: isClick ? 250 : 100,
+              child: CustomAnimatedContainer(
+                total: 1500,
+                delivery: 20,
+                discount: 50,
+                subTotal: 1430,
+                isClick: isClick,
               ),
             ),
-            15.ph,
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  isClick = !isClick;
+                });
+              },
+              icon: Icon(
+                isClick ? Icons.arrow_drop_up : Icons.arrow_drop_down,
+                size: 35,
+              ),
+            ),
+            // 10.ph,
             Expanded(
               child: SingleChildScrollView(
                 child: GridView.builder(
@@ -89,7 +59,7 @@ class _CartPageState extends State<CartPage> {
                   itemCount: 12,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
-                    childAspectRatio: 16 / 4,
+                    childAspectRatio: 16 / 5,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
@@ -105,32 +75,6 @@ class _CartPageState extends State<CartPage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class textBar extends StatelessWidget {
-  final String text;
-  final String value;
-  const textBar({super.key, required this.text, required this.value});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: AppStyle().normalText,
-          ),
-          Text(
-            value,
-            style: AppStyle().normalText,
-          ),
-        ],
       ),
     );
   }
