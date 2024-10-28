@@ -15,10 +15,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _index = 0;
   final List<Widget> pages = [
-    MainPage(),
-    FavoritePage(),
-    CartPage(),
-    AccountPage(),
+    const MainPage(),
+    const FavoritePage(),
+    const CartPage(),
+    const AccountPage(),
   ];
 
   @override

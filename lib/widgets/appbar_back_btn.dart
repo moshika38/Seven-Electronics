@@ -22,15 +22,15 @@ class AppbarBackBtn extends StatelessWidget {
             Navigator.push(
               context,
               CoustomAnimation.pageAnimation(
-                HomePage(),
-                Offset(-1.0, 0.0),
+                const HomePage(),
+                const Offset(-1.0, 0.0),
                 Offset.zero,
                 Curves.easeInOut,
                 500,
               ),
             );
           },
-          icon: Center(
+          icon: const Center(
             child: Icon(
               Icons.arrow_back,
             ),

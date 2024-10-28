@@ -16,7 +16,7 @@ class _FavoritePageState extends State<FavoritePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: AppbarBackBtn(),
+        leading: const AppbarBackBtn(),
         title: Text(
           "Favorites Items",
           style: AppStyle().subTitle,

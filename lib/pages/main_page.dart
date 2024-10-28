@@ -1,9 +1,12 @@
 import 'dart:async';
 import 'package:coustom_flutter_widgets/input_feild.dart';
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
+import 'package:e_commers_app/kWidgets/bottom_sheet.dart';
+import 'package:e_commers_app/utils/colors.dart';
 import 'package:e_commers_app/widgets/cate_card.dart';
 import 'package:e_commers_app/widgets/hedline.dart';
 import 'package:e_commers_app/widgets/cyber_monday_card.dart';
+import 'package:e_commers_app/widgets/sheet_body.dart';
 import 'package:e_commers_app/widgets/subscribe.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -139,11 +142,21 @@ class _MainPageState extends State<MainPage> {
                     childAspectRatio: 16 / 14,
                   ),
                   itemBuilder: (context, index) {
-                    return const CyberMondayCard(
-                      image: "assets/src/cooker.png",
-                      title: "Rice Cooker",
-                      rate: 4,
-                      discount: "30",
+                    return GestureDetector(
+                      onTap: () {
+                        CustomBottomSheet(
+                          context: context,
+                          height: 100.cmph(context),
+                          bgColor: AppColors().mainWhite,
+                          child: SheetBody(),
+                        ).showSheet();
+                      },
+                      child: const CyberMondayCard(
+                        image: "assets/src/cooker.png",
+                        title: "Rice Cooker",
+                        rate: 4,
+                        discount: "30",
+                      ),
                     );
                   },
                 ),
@@ -152,7 +165,7 @@ class _MainPageState extends State<MainPage> {
               const Headline(
                 mainTitle: "New User Offers",
                 subTitle: "See all",
-              ), 
+              ),
 
               // 10.ph,
               SizedBox(

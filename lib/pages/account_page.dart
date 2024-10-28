@@ -1,5 +1,4 @@
 import 'package:coustom_flutter_widgets/size_extensiton.dart';
-import 'package:e_commers_app/pages/cart_page.dart';
 import 'package:e_commers_app/utils/style.dart';
 import 'package:e_commers_app/widgets/appbar_back_btn.dart';
 import 'package:e_commers_app/widgets/details_card.dart';
@@ -19,7 +18,7 @@ class _AccountPageState extends State<AccountPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: AppbarBackBtn(),
+        leading: const AppbarBackBtn(),
         title: Text(
           "Account",
           style: AppStyle().subTitle,
@@ -29,16 +28,16 @@ class _AccountPageState extends State<AccountPage> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            SettingsCard(
+            const SettingsCard(
               mainText: "Currently Login",
               secText: "moshika38@gmail.com",
               isGoogle: true,
             ),
-            DetailsCard(
+            const DetailsCard(
               mainText: "User Name",
               secText: "Moshika38",
             ),
-            DetailsCard(
+            const DetailsCard(
               mainText: "Address",
               secText: "no 07, wijaya lane, mailagasthanna, badulla, sri lanka",
             ),

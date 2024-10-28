@@ -54,7 +54,7 @@ class _DetailsCardState extends State<DetailsCard> {
         ),
         5.ph,
         AnimatedContainer(
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           height: isClick ? 100 : 0,
           child: isClick
               ? Container(
@@ -78,7 +78,7 @@ class _DetailsCardState extends State<DetailsCard> {
                     ),
                   ),
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
         ),
       ],
     );

@@ -72,8 +72,8 @@ class _SingINState extends State<SingIN> {
                 Navigator.push(
                   context,
                   CoustomAnimation.pageAnimation(
-                    HomePage(),
-                    Offset(1.0, 0.0),
+                    const HomePage(),
+                    const Offset(1.0, 0.0),
                     Offset.zero,
                     Curves.easeInOut,
                     500,

@@ -54,7 +54,7 @@ class _SettingsCardState extends State<SettingsCard> {
         ),
         5.ph,
         AnimatedContainer(
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           height: isClick ? 100 : 0,
           child: isClick
               ? Container(
@@ -68,8 +68,8 @@ class _SettingsCardState extends State<SettingsCard> {
                     child: Row(
                       children: [
                         widget.isGoogle
-                            ? Icon(Icons.email)
-                            : Icon(Icons.facebook),
+                            ? const Icon(Icons.email)
+                            : const Icon(Icons.facebook),
                         10.pw,
                         Text(
                           widget.secText,
@@ -79,7 +79,7 @@ class _SettingsCardState extends State<SettingsCard> {
                     ),
                   ),
                 )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
         ),
       ],
     );
