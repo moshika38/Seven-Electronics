@@ -18,7 +18,7 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: AppbarBackBtn(),
+        leading: const AppbarBackBtn(),
         title: Text(
           "Item Cart",
           style: AppStyle().subTitle,
@@ -40,23 +40,23 @@ class _CartPageState extends State<CartPage> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      textBar(
+                      const textBar(
                         text: "Total Item :",
                         value: "10",
                       ),
-                      textBar(
+                      const textBar(
                         text: "Total Price :",
                         value: "100 USd",
                       ),
-                      textBar(
+                      const textBar(
                         text: "Discount :",
                         value: "10 %",
                       ),
-                      textBar(
-                        text: "Delevary Charge :",
+                      const textBar(
+                        text: "Delivery Charge :",
                         value: "10 USD",
                       ),
-                      textBar(
+                      const textBar(
                         text: "Sub Total :",
                         value: "100 USD",
                       ),
@@ -84,17 +84,17 @@ class _CartPageState extends State<CartPage> {
             Expanded(
               child: SingleChildScrollView(
                 child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 12,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     childAspectRatio: 16 / 4,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) {
-                    return CartBody(
+                    return const CartBody(
                       image: "assets/src/cooker.png",
                       price: "23",
                       title: "Rice Cooker",
